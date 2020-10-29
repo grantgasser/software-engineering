@@ -20,7 +20,7 @@ def search2d(matrix, target):
         start_idx = 0
         end_idx = len(row) - 1
 
-        # stupid fucking side cases
+        # side cases
         if len(row) == 1:
             return row[0] == target
 

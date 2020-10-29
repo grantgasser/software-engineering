@@ -14,6 +14,7 @@
 60MB, 8%
 */
 
+// running pointers, similar to what you might do in Linked List
 class Solution {
 public:
     TreeNode* insertIntoBST(TreeNode* root, int val) {

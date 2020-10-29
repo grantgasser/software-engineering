@@ -2,7 +2,7 @@
 Runtime: 36 ms, 53%
 Memory Usage: 14.2 MB
 
-Looked a got some help but most on my own
+Looked and got some help but most on my own
 
 Time: O(N)
 Space: O(N) to create "reverse" string

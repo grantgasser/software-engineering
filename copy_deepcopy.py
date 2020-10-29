@@ -28,7 +28,7 @@ print('old list:', old_list)
 print('new_list:', new_list)
 
 # same in nested case
-print('\nsame deal for nested case')
+print('\nsame deal for nested case (objects w/in objects)')
 old_list = [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
 new_list = copy(old_list)
 old_list.append([4, 4, 4])
@@ -36,7 +36,7 @@ print("Old list:", old_list)
 print("New list:", new_list)
 
 # change original (so change [1,2,3,4])
-print('\nchanging object inside original object changes both the original and copy')
+print('\nBUT, changing object inside original object changes both the original and copy')
 old_list = [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
 new_list = copy(old_list)
 old_list[1][1] = 'AA'
