@@ -29,6 +29,7 @@ class HashTable(object):
         if self.table[idx] == None:
             self.table[idx] = ListNode(name)
         else:
+            # linear probing/hashing (linked list)
             curr = self.table[idx]
             while curr.next:
                 curr = curr.next
