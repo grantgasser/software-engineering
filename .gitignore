@@ -2,3 +2,5 @@
 *.DS_Store
 *.pdf
 *.png
+
+__pycache__/
