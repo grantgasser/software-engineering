@@ -1,13 +1,17 @@
 """
 Rotate Matrix: Given an image represented by an NxN matrix, where each pixel in the image is 4
-bytes, write a method to rotate the image by 90 degrees. (an you do this in place?
+bytes, write a method to rotate the image by 90 degrees. (can you do this in place?)
 Hints: #51, #100
+
+NOTE: good one to REDO
 """
 
 """
 1 2 3
 4 5 6
 7 8 9
+
+=>
 
 7 4 1
 8 5 2
@@ -34,7 +38,7 @@ def rotate_matrix(M):
     # could do even more input validation..
 
     # rotate 90 degrees; do circular rotation layer by layer, starting on outer layer
-    # O(N^2), best we can do since we have to touch all N^2 elements
+    # BCR: O(N^2), best we can do since we have to touch all N^2 elements
     num_layers = N // 2
     for layer in range(num_layers):
         first = layer

@@ -4,13 +4,16 @@ remove a character, or replace a character. Given two strings, write a function 
 one edit (or zero edits) away.
 
 Like edit_dist < 1
+
+NOTE: assuming ASCII again here! don't have to do that
 """
 
 def one_away(s1, s2):
     if abs(len(s1) - len(s2)) > 1:
         return False
     
-    # hashmap for both, iterate thru and count differences: O(max(len(s1), len(s2))) time, O(N) space  
+    # hashmap for both, iterate thru and count differences: O(max(len(s1), len(s2))) time
+    # O(1) space bc assuming ASCII, otherwise would be O(N) space  
     s1_chars = [0]*128 #97, 101, 108, 112
     for ch in s1:
         s1_chars[ord(ch)] += 1

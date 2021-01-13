@@ -31,6 +31,7 @@ print(is_unique('foobar'))
 def is_unique2(s):
     # Sort first: O(N LOG N)
     # NOTE: this isn't good because Python sorted() creates a new sorted string
+    # so this is O(N) space and it DOES use an extra data structure, would have to write quicksort or something..
     s_sorted = sorted(s)
 
     # O(N), 2 points, 1 curr, 1 prev; if curr == prev: return False

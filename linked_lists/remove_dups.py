@@ -47,7 +47,7 @@ class ListRemoveDup(List):
         """
         vals = {}
         curr = self.head
-        prev = curr
+        prev = curr  # runner 
  
         while curr.next:
             val = vals.get(curr.val)
