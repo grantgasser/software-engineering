@@ -27,3 +27,6 @@ def route(src_node, dst_val):
                 q.append(child)
 
     return False
+
+# NOTE: worth mentioning to interviewer that BFS better for shortest path
+# but DFS a bit easier to implement
