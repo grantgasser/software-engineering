@@ -39,6 +39,6 @@ def flip_bit_to_win(binary_num_str):
 print(flip_bit_to_win(bin(1775)[2:]))  # expect 8
 print(flip_bit_to_win('00101100'))  # expect 4, FIX
 
-# TODO: optimal algorithm
+# TODO: optimal algorithm, BCR is O(b)
 def optimal_flip_bit(num):
     pass
