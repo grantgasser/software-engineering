@@ -16,7 +16,7 @@ print(f'{total:,}')
 
 
 # 3 using 'with' context manager
-# don't need to rememnber to close file
+# don't need to remember to close file
 with open('test.txt') as f:
     contents = f.read()
 
@@ -77,7 +77,7 @@ person.last = 'Deere'
 print(person.first, person.last)
 
 # what if we want to use the value of a variable to be the attribute name?
-first_key = 'first'  # so we want to create an attribute person.first
+first_key = 'first'  # so we want to create an attribute: person.first
 first_val = 'Jane'
 
 # use setattr()
