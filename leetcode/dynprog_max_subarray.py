@@ -11,6 +11,8 @@ Note that you cannot sell a stock before you buy one.
 Use Kadane's Algo!
 
 The logic to solve this problem is same as "max subarray problem" using Kadane's Algorithm. 
+
+Similar to Leetcode 53
 """
 
 # very subtle! code is simple but idea is hard to grasp
@@ -24,9 +26,9 @@ def maxProfit(prices):
         # (prices[i] - prices[i-1]) is today's difference, so new_max_curr is max_curr combined
         # w/ today's difference
         new_max_curr = max_curr + (prices[i] - prices[i-1])
-        max_curr = max(0, new_max_curr)
+        max_curr = max(0, new_max_curr)  # was there an increase? basically, is the difference (p[i] - p[i-1]) positive?
         
-        max_so_far = max(max_so_far, max_curr)
+        max_so_far = max(max_so_far, max_curr)  
         
         i += 1
         
