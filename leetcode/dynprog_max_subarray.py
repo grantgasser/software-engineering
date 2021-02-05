@@ -10,21 +10,20 @@ Note that you cannot sell a stock before you buy one.
 
 Use Kadane's Algo!
 
-The logic to solve this problem is same as "max subarray problem" using Kadane's Algorithm. 
+The logic to solve this problem is similar to "max subarray problem" using Kadane's Algorithm. 
 
-Similar to Leetcode 53
+Similar to Leetcode 53, but difference is the answer can be negative in 53, here you just dont buy/sell and get 0
 """
 
 # very subtle! code is simple but idea is hard to grasp
 # O(N)
 def maxProfit(prices):
-    max_curr = 0
+    max_curr = 0  # note max_curr is anchored at 0, won't go below
     max_so_far = 0
     
     i = 1
     while i < len(prices):
-        # (prices[i] - prices[i-1]) is today's difference, so new_max_curr is max_curr combined
-        # w/ today's difference
+        # (prices[i] - prices[i-1]) is today's difference, so new_max_curr is max_curr combined w/ today's difference
         new_max_curr = max_curr + (prices[i] - prices[i-1])
         max_curr = max(0, new_max_curr)  # was there an increase? basically, is the difference (p[i] - p[i-1]) positive?
         
@@ -35,4 +34,4 @@ def maxProfit(prices):
     return max_so_far
 
 # expect 5
-print(maxProfit([7,1,5,3,6,4]))
+print(maxProfit([7,1,5,3,6,4]))  # diff = [-6, 4, -2, 3, -2]
