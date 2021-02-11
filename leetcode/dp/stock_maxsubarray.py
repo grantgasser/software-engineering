@@ -24,8 +24,12 @@ def maxProfit(prices):
     i = 1
     while i < len(prices):
         # (prices[i] - prices[i-1]) is today's difference, so new_max_curr is max_curr combined w/ today's difference
+        # i.e. 8 = 5 + 3 OR -2 = 5 + -7
         new_max_curr = max_curr + (prices[i] - prices[i-1])
-        max_curr = max(0, new_max_curr)  # was there an increase? basically, is the difference (p[i] - p[i-1]) positive?
+
+        # did adding today's price diff keep us above 0? if not, set to 0, else set new
+        # i.e. 8 = max(0, 8) OR 0 = max(0, -2)
+        max_curr = max(0, new_max_curr)  # key: stay >= 0 
         
         max_so_far = max(max_so_far, max_curr)  
         

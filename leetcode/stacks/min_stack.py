@@ -49,7 +49,8 @@ class MinStack:
         # because we changed the list, we need to check if min val changed
         if popped_val == self.min_val:
             if self.stack:
-                self.min_val = min(self.stack)  # linear
+                # linear, NOTE: could keep track of prev min to avoid this search
+                self.min_val = min(self.stack)
             else:
                 self.min_val = float(inf)
             

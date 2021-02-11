@@ -50,7 +50,6 @@ def num_cars(start):
             # change curr light so we can check if initial light changes
             curr.on = not curr.on
             
-            
             # check for stopping condition
             for i in range(counter):
                 curr = curr.prev
