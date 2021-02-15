@@ -6,10 +6,6 @@ cannot use additional data structures?
 Assuming ASCII, could store in array of bools where index i is ascii val instead of hash table
 """
 
-# NOTE: there's a subtlety I initially missed here. If we assume ASCII, then we know theres only 128
-# or 256 characters. Thus, if len(s) > 128, we can return False. Thus, time is actually O(1). Or, 
-# more accurately, O(c) time where c is the size of the character set.
-
 # w/ additional data structure: O(N) Time, O(1) space (only 26 characters)
 def is_unique(s):
     chars = {}
@@ -29,12 +25,13 @@ print(is_unique('foobar'))
 # w/ no extra data structure: O(N LOG N) time, O(1) space
 # so sacrifice some time for saving that space
 def is_unique2(s):
-    # Sort first: O(N LOG N)
-    # NOTE: this isn't good because Python sorted() creates a new sorted string
-    # so this is O(N) space and it DOES use an extra data structure, would have to write quicksort or something..
-    s_sorted = sorted(s)
+    # sort first: O(N LOG N)
+    # sorts in place, maintains O(1) space
+    s.sort()
 
-    # O(N), 2 points, 1 curr, 1 prev; if curr == prev: return False
+    # NOTE: sorted() creates a new list, less space efficient
+
+    # O(N)
     for i, curr in enumerate(s_sorted):
         prev = s_sorted[i-1]
         

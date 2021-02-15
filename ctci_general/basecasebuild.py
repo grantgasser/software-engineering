@@ -7,9 +7,11 @@ Consider a test string abcdefg.
 Case "a" --> {"a"}
 Case " ab" --> {"ab", "ba"}
 Case "abc" --> ?
+
+nPk = n! / (n-k)!
 """
 
-# O(?)
+# O(?), BCR seems to be N! since we need to generate N! combinations
 
 def perm_helper(ch, perms_list):
     new_list = []
@@ -37,5 +39,5 @@ def permutations(s):
 # works! 
 print(perm_helper('c', ['ab', 'ba']))
 print(permutations('abcd'))
-print(len(permutations('abcd')))  # expect 4P4 = 24
-print(len(permutations('abcdefg')))  # expect 7P7 = 5040
+print(len(permutations('abcd')))  # expect 4P4 = 4! = 24
+print(len(permutations('abcdefg')))  # expect 7P7 = 7! = 5040
