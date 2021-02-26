@@ -33,7 +33,7 @@
 # mistake: I guess O(N) but its O(N^2) - wish I had more time to analyze and
 # get it right
 
-# also, he mentioned something about reverse binary search to reduce runtime - I'm assuming to O(N log N)
+# also, mentioned something about reverse binary search to reduce runtime - I'm assuming to O(N log N)
 def num_cars(start):
     counter = 0
     done = False

@@ -4,3 +4,7 @@
 *.png
 
 __pycache__/
+
+# interview folders
+c3_interviews/
+apple_interviews/
