@@ -14,7 +14,7 @@ import heapq
 
 # heapify an existing arr/binary tree
 arr = [5, 7, 9, 1, 3]
-heapq.heapify(arr)  # modifies in place, doesn't return value
+heapq.heapify(arr)  # modifies in place, doesn't return value, docs claim O(N)
 print(arr)
 
 # Insert: always goes in bottommost, leftmost spot
