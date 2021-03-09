@@ -1,5 +1,9 @@
 from binary_tree import TreeNode
 
+"""
+Also, "level order" traversal is a breadth-first search in a tree
+"""
+
 # left remains before right, only thing changes is the
 # order of the print and recursive calls
 def inorder(node):
