@@ -38,3 +38,26 @@ def frequencySort(self, s: str) -> str:
         result += (key * freq[key])
     
     return result
+
+
+"""Bucket Sort approach (slower and worse mem according to submission)"""
+# trying bucket sort now
+def frequencySort(self, s: str) -> str:
+        freq = {}
+        for ch in s:
+            freq[ch] = freq.get(ch, 0) + 1
+
+        # {e: 2, r: 1, t: 1}
+
+        # bucket sort 
+        bucket = [[] for _ in range(len(s) + 1)]
+        for k, v in freq.items():
+            bucket[v].append(k);
+
+        # bucket = [[], [r, t], [e]]
+        result = ''
+        for i in range(len(bucket) - 1, -1, -1):
+            for j in bucket[i]:
+                result += (i * j)
+
+        return result
