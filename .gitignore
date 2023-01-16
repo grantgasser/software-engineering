@@ -14,3 +14,33 @@ apple_interviews/
 openai/openai-quickstart-python/
 openai/swe-practice-env/
 openai/config.py
+chatgpt_created_react_app/.env
+
+# images
+images/
+
+# React code
+# dependencies
+chatgpt_created_react_app/node_modules/
+
+# testing
+chatgpt_created_react_app/coverage/
+
+# production
+chatgpt_created_react_app/build/
+
+# misc
+.DS_Store
+.env*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE files
+.idea/
+*.iml
+*.orig

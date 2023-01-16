@@ -66,3 +66,21 @@ def rotate_matrix(M):
 #print(rotate_matrix([[1, 2, 5], [1, 2, 3]]))
 print(rotate_matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))  # correct
 print(rotate_matrix([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]])) # correct
+
+"""
+ChatGPT improved solution
+"""
+def rotate_matrix2(M):
+    if not isinstance(M, list) or not all(isinstance(i, list) for i in M):
+        raise ValueError("Input must be a 2D list")
+    N = len(M)
+    for layer in range(N // 2):
+        first = layer
+        last = N - 1 - layer 
+        for i in range(first, last):
+            offset = i - first
+            M[first][i], M[last-offset][first], M[last][last-offset], M[i][last] = M[last-offset][first], M[last][last-offset], M[i][last], M[first][i]
+    return M
+
+print(rotate_matrix2([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))  # correct
+print(rotate_matrix2([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]])) # correct
