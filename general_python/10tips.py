@@ -102,7 +102,7 @@ for key in person_info.keys():
 # use getpass()
 from getpass import getpass
 username = input('Username: ')
-#password = input('Password: ')  # Bad! you can see the input on the screen
+#password = input('Password: ')  # Bad! you can see the input in the console
 password = getpass('Password: ')
 print('Logging in...')
 
@@ -119,7 +119,7 @@ or if you don't need as much info, just want methods and attributes
 >>> from datetime import datetime
 >>> dir(datetime)
 
-is "today" in datetime
+is "today" a method in datetime
 >>> datetime.today
 <built-in method today ... >
 >>> datetime.today()

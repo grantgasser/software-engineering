@@ -83,4 +83,3 @@ input_obj = {
 }
 
 print(count_types(input_obj))
-
