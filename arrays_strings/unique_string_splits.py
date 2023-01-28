@@ -33,40 +33,20 @@ input: xyyx
 x, y, yx (+1)
 x, yy, x 
 xy, y, x (+1)
+
+
+Just need two pointers: i and j to make 3 splits (a,b,c):
+    a, b, c = s[:i], s[i:j], s[j:]
+    - simple nested loop approach
+    - O(N^2) time and O(N)
 """
 
 def solution(s):
     count = 0
    
-    a = s[0]
-    b = s[1]
-    c = s[2:]
-    
-    if a != b != c:
-        count += 1
-    
-    # strip down 3rd split (c) first
-    while len(c) > 1:
-        print('a,b,c:', a,b,c)
-        print('b:', b)
-        print('adding c[0]:', c[0])
-        b += c[0]
-        c = c[1:]
-        print('now b and c:', b, c)
-        
-        if a != b != c:
-            #print('stripping c:', a, b, c)
-            count += 1
-            print('count incremented:', count)
-        
-    while len(b) > 1:
-        a += b[0]
-        b = b[1:]
-        
-        if a != b != c:
-            #print('stripping b:', a, b, c)
-            count += 1
-
+    for i in range(1, len(s) - 1):
+        for j in range(i + 1, len(s)):
+            a, b, c = s[:i], s[i:j], s[j:]
+            if (a+b) != (b+c) and (b+c) != (c+a) and (a+b) != (c+a):
+                count += 1
     return count
-
-print(solution("xzxzx"))
