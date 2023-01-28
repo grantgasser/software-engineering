@@ -75,7 +75,7 @@ def climb_helper(self, target):
 
 
 """
-DP solution: With almost no help!
+DP solution
 
 O(N) time and space
 
