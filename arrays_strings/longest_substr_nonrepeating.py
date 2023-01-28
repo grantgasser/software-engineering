@@ -64,6 +64,10 @@ def lengthOfLongestSubstring(s):
 
     return max_substr
 
+print(lengthOfLongestSubstring("abcabcbb"))
+print(lengthOfLongestSubstring("bbbbb"))
+print(lengthOfLongestSubstring("pwwkew"))
+
 
 """
 O(N) solution
@@ -81,6 +85,3 @@ def longest_subtr(s):
 
     return max_substr
 
-print(lengthOfLongestSubstring("abcabcbb"))
-print(lengthOfLongestSubstring("bbbbb"))
-print(lengthOfLongestSubstring("pwwkew"))
