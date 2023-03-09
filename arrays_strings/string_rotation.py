@@ -32,7 +32,14 @@ call to isSubstring (e.g., "waterbottle" is a rotation of "erbottlewat").
 # #print(rotate_string('foo', 'bart'))
 # print(rotate_string('falogreatwhitebuf', 'greatwhitebuffalo'))  # bad assumption
 
+"""
 # NOTE: rotation? just add s1 + s1 and see if s2 is in the result
+
+wat|erbottlewat|erbottle
+
+Time: O(N), assuming 'in' runs in O(A + B)
+Space: O(N)
+"""
 def rotate_string2(s1, s2):
     if len(s1) != len(s2) or len(s1) == 0:
         return False
