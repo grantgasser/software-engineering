@@ -2,24 +2,26 @@ from binary_tree import TreeNode
 
 """
 Also, "level order" traversal is a breadth-first search in a tree
+
+Also, "in-order" on a BST is the sorted order of the elements
 """
 
 # left remains before right, only thing changes is the
 # order of the print and recursive calls
 def inorder(node):
-    if node is not None:
+    if node:
         inorder(node.left)
         print(node.data)
         inorder(node.right)
 
 def preorder(node):
-    if node is not None:
+    if node:
         print(node.data)
         preorder(node.left)
         preorder(node.right)
 
 def postorder(node):
-    if node is not None:
+    if node:
         postorder(node.left)
         postorder(node.right)
         print(node.data)

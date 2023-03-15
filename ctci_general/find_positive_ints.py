@@ -11,4 +11,4 @@ c = 2, d = 3, then a and b will be same as c and d from the above^ iteration
 """
 
 def brute_force(limit=1000):
-    
+    pass
