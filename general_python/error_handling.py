@@ -1,3 +1,7 @@
+"""
+Types of exceptions: https://www.w3schools.com/python/python_ref_exceptions.asp
+"""
+
 # Vanilla
 try:
     print(x)
