@@ -97,7 +97,7 @@ class SchellingBoard:
     
     def find_empty(self):
         """Finds a random empty cell in the grid / empty lot in the neighborhood"""
-        indices_of_ones = np.argwhere(board.board == 1)
+        indices_of_ones = np.argwhere(self.board == 1)
         index_of_index = np.random.choice(indices_of_ones.shape[0])
         i, j = indices_of_ones[index_of_index]
 
