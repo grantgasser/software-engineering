@@ -16,9 +16,9 @@ class SchellingBoard:
 
         n: number of rows and cols
         thresh: minimum number of neighbors of its same group the agent prefers to have
-        empty:
-        black:
-        white:
+        empty: % of cells (lots) that are empty
+        black: % of cells (lots) occupied by black
+        white: % of cells (lots) occupied by white
         """
         self.n = n
         self.thresh = thresh
@@ -28,7 +28,7 @@ class SchellingBoard:
 
         # create the board
         self.board = np.random.choice([0, 1, 2], size=(n, n), p=[black, empty, white])
-        self.initial_board = self.board.copy()
+        self.initial_board = self.board.copy()  # keep for comparison
 
     def plot(self, i, initial=False):
         if initial:
@@ -109,11 +109,11 @@ thresh = float(input('What percentage of neighbors should people desire to be li
 
 # Create board and run simulation
 board = SchellingBoard(30, thresh, empty=.15, black=.3, white=.55)
-
 for i in range(months):
     board.update()
     board.plot(i)
 
+# Compare initial board to final board
 board.plot(i=0, initial=True)
 plt.show()
 board.plot(i=months)
