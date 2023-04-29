@@ -47,3 +47,6 @@ yarn-error.log*
 *.orig
 
 data_science/
+
+#
+*.mov

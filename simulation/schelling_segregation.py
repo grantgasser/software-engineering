@@ -10,7 +10,7 @@ Context:
 
 """
 class SchellingBoard:
-    def __init__(self, n, thresh, empty=0.2, black=0.2, white=0.6):
+    def __init__(self, n, thresh, empty=0.1, black=0.25, white=0.65):
         """
         Creates a board representing a neighborhood and initializes dynamics of environment
 
@@ -30,18 +30,21 @@ class SchellingBoard:
         self.board = np.random.choice([0, 1, 2], size=(n, n), p=[black, empty, white])
         self.initial_board = self.board.copy()  # keep for comparison
 
-    def plot(self, i, initial=False):
+    def plot(self, i, initial=False, self_close=True):
         if initial:
             board = self.initial_board
             i = 'INITIAL'
         else:
             board = self.board
 
-        plt.figure(figsize=(10, 10))
+        plt.figure(figsize=(12, 10))
         plt.imshow(board, cmap='binary_r')
         plt.xticks([])
         plt.yticks([])
-        plt.title(f"Neighborhood (threshold: {self.thresh:.2%}, black: {self.black:.2%}, white: {self.white:.2%}); Month: {i}")
+        plt.title(
+            f"Neighborhood (threshold: {self.thresh:.2%}, black: {self.black:.2%}, white: {self.white:.2%}); Month: {i}",
+            fontsize=20
+        )
 
         plt.draw()
         if i == 0:
@@ -49,6 +52,9 @@ class SchellingBoard:
         else:
             plt.pause(1)
         plt.clf()
+
+        if self_close:
+            plt.close()
 
     def update(self):
         for i in range(self.n):
@@ -108,13 +114,13 @@ months = int(input('How many months should we simulate?: '))
 thresh = float(input('What percentage of neighbors should people desire to be like themselves? (ex: `0.4` as 40%): '))
 
 # Create board and run simulation
-board = SchellingBoard(30, thresh, empty=.15, black=.3, white=.55)
+board = SchellingBoard(30, thresh)
 for i in range(months):
     board.update()
     board.plot(i)
 
 # Compare initial board to final board
-board.plot(i=0, initial=True)
+board.plot(i=0, initial=True, self_close=False)
 plt.show()
-board.plot(i=months)
+board.plot(i=months, self_close=False)
 plt.show()
