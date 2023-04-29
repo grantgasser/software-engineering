@@ -1,7 +1,7 @@
 *.xlsx
 *.DS_Store
 *.pdf
-*.png
+#*.png
 .vscode/
 
 __pycache__/
