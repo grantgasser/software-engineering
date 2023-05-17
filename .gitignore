@@ -47,6 +47,8 @@ yarn-error.log*
 *.orig
 
 data/
+.ipynb_checkpoints/
+practice_env/
 
 #
 *.mov
