@@ -46,7 +46,7 @@ yarn-error.log*
 *.iml
 *.orig
 
-data_science/
+data/
 
 #
 *.mov
