@@ -23,7 +23,7 @@ class Solution:
         nums.sort()
         res = []
         for i in range(len(nums)-2):
-            # Avoid dups of i
+            # Skip dups for 1st number
             if i > 0 and nums[i] == nums[i-1]:
                 continue
 
@@ -32,16 +32,19 @@ class Solution:
             while left < right:
                 summ = nums[i] + nums[left] + nums[right]
 
+                # Move pointer left or right since this is not a triplet (sorting allows this)
                 if summ < 0:
                     left += 1
                 elif summ > 0:
                     right -= 1
-                else: # if 0, we've found one
+                else:
+                    # found a triplet
                     res.append([nums[i], nums[left], nums[right]])
                     
-                    # found one, now avoid dups! 
+                    # Skip dups for 2nd number
                     while left < right and nums[left] == nums[left+1]:
                         left += 1
+                    # Skip dups for 3rd number
                     while left < right and nums[right] == nums[right-1]:
                         right -= 1
                     

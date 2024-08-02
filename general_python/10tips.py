@@ -24,7 +24,7 @@ with open('test.txt') as f:
 # any time you're manually managing resources
 
 
-# 4 enumerate()
+# 4 enumerate() takes another argument
 # if you don't want to start at 0! :)
 names = ['Jane', 'John', 'Walter White', 'Barney']
 for i, name in enumerate(names, start=1):
