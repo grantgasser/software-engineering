@@ -1,3 +1,5 @@
+# https://www.w3schools.com/python/python_ref_functions.asp
+
 # abs()
 print('abs()')
 print(abs(-5))
@@ -66,3 +68,52 @@ print(isinstance([16], list))
 # map() - similar to filter() (FYI map and filter return iterables)
 print('\nmap()')
 print([x for x in map(lambda name: len(name), ['Grant', 'Tom', 'Barry'])])
+
+# max() - also min()
+print('\nmax()')
+print(max([-1, -4, 11]))
+
+# open()
+print('\nopen()')
+with open('demofile.txt', 'r') as f:
+    text = f.read()
+print(text.split('\n\n'))
+
+# range()
+print('\nrange()')
+for i in range(5):
+    print(i)
+print()
+for evens in range(0, 12, 2):
+    print(evens)
+
+# reversed()
+print('\nreversed()')
+print([r for r in reversed([1,2,3,4,5])])
+print([r for r in reversed(range(1, 6, 1))])
+
+# round()
+print('\nround()')
+print(round(5.5))
+print(round(0.2))
+
+# sorted()
+print('\nsorted()')
+print(sorted([-1, -5, 3, 8, 2]))
+dic = {'the': 12, 'a': 14, 'an': 11, 'is': 24}
+print(sorted(dic, key=dic.get, reverse=True)) # most frequent words
+
+# sum()
+print('\nsum()')
+print(sum([1, 2, 3, 4, -4]))
+
+# type
+print('\ntype()')
+print(type(dic))
+
+# zip()
+print('\nzip()')
+one = ('a', 'b')
+two = ('c', 'd')
+for o, t in zip(one, two):
+    print(o, t)
